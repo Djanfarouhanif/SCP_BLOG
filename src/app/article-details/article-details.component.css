@@ -13,8 +13,11 @@
 
 @media screen and (max-width:500px){
     .content{
-        background-color: #0000ff41;
+        
         grid-template-columns: auto;
+        .filter{
+            grid-row-start: 1;
+        }
     }
 }
 
