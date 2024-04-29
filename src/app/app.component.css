@@ -1,0 +1,21 @@
+.content{
+    width: 100%;
+    border: blue solid;
+    display: grid;
+    grid-template-columns: auto 200px;
+    grid-gap: 10px;
+    padding: 10px;
+    
+}
+
+.rout{
+    background: black;
+    display: none;
+}
+
+@media screen and (max-width:500px){
+    .content{
+        background-color: #0000ff41;
+        grid-template-columns: auto;
+    }
+}

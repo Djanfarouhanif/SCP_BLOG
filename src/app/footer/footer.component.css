@@ -1,0 +1,12 @@
+.content{
+    width: 100%;
+    height: 100px;
+    background: black;
+}
+
+.footer{
+    ul li{
+        list-style: none;
+        color: white;
+    }
+}
