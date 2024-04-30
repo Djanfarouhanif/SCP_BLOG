@@ -24,6 +24,10 @@
 .fixed{
     position: fixed;
     z-index: 2;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 100%;
 }
 .navbar{
     display: flex;
