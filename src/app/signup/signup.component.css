@@ -1,11 +1,85 @@
 
 
 .form{
-    width: 700px;
-    margin: 200px auto;
-    
+    width: 500px;
+    margin: 100px auto;
+    text-align: center;
+    box-shadow: 0px 0px 4px 1px ;
+    padding: 40px;
+    border-radius: 15px;
 }
 
 form{
-    margin: 20px auto;
+    
+    .username{
+        border: 1px solid #373434bf;
+        width: 100%;
+        margin: 5px;
+        border-radius: 10px;
+        input{
+            width: 100%;
+            
+        }
+    }
+
+    .email{
+        border: 1px solid #373434bf;
+        width: 100%;
+        margin: 5px;
+        border-radius: 10px;
+        input{
+            width: 100%;
+        }
+    }
+
+    .password{
+        border: 1px solid #373434bf;
+        width: 100%;
+        margin: 5px;
+        border-radius: 10px;
+        input{
+            width: 100%;
+        }
+    }
+
+    .password2{
+        border: 1px solid #373434bf;
+        width: 100%;
+        margin: 5px;
+        border-radius: 10px;
+        input{
+            width: 100%;
+        }
+    }
+
+    .button{
+        border: 1px solid  #373434bf;
+        margin: 5px;
+        width: 100%;
+        border-radius: 15px;
+        button{
+            border-radius: 15px ;
+            width: 100%; 
+            padding: 7px;
+            outline: none;
+            background-color:rgb(40, 205, 141) ;
+            border: none;
+            color: #ffffff;
+        }
+    }
+    
+  
+}
+
+input{
+    
+    padding: 7px;
+    outline: none;
+    border-radius: 10px;
+    border: none;
+    
+}
+
+input:focus{
+    border: 2px solid  rgb(40, 205, 141) ;
 }
