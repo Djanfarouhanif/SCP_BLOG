@@ -1,18 +1,18 @@
-<div class="navbar-content">
+<div class="navbar-content" [ngClass]="{'fixed': isMenuOpen}">
     <div class="nav">
         <h1>Communauter Developeur </h1>
     </div>
     <div class="navbar">
         <div class="menu-icon" (click)="openMenu()">
-            <img src="../../assets/icon/menu-burger.png" alt="">
+            <img src="../../assets/icon/{{menu_icon}}.png" alt="">
         </div>
             <div class="desktop_menu" [class.mobile_menu]="menuValue">
                 <ul>
-                    <li><a href="#">Home</a></li> 
-                    <li><a href="#">Produit</a></li>
-                    <li><a href="#">Register</a></li>
-                    <li><a href="#">Login</a></li>
-                    <li><a href="#">Logout</a></li>
+                    <li (click)="closeMenu()"><a href="#">Home</a></li> 
+                    <li (click)="closeMenu()"><a href="#">Produit</a></li>
+                    <li (click)="closeMenu()"><a href="#">Register</a></li>
+                    <li (click)="closeMenu()"><a href="#">Login</a></li>
+                    <li (click)="closeMenu()"><a href="#">Logout</a></li>
                 </ul>
          </div>
     </div>

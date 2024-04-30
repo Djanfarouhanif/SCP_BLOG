@@ -21,7 +21,9 @@
     }
 }
 
-
+.fixed{
+    position: fixed;
+}
 .navbar{
     display: flex;
     
@@ -32,7 +34,7 @@
 
         li{
             list-style-type: none;
-            display: inline-block;
+            
             font-size: 19px;
             margin-left: 20px;
             
@@ -44,7 +46,7 @@
         }
     }
     .menu-icon {
-       
+       transition: 0.4s ease-in-out;
         padding: 10px;
         
 
@@ -56,7 +58,7 @@
     }
    
 }
-ul li a:hover{
+.desktop_menu ul li a:hover{
     font-size: 19px;
     font-weight: bold;
     cursor: pointer;
@@ -68,12 +70,9 @@ ul li a:hover{
 }
 
 
-.desktop_menu{
-    margin-top:24px
-}
 
 
-@media screen and  (max-width:900px){
+
     .desktop_menu{
         position: fixed;
         transition: 0.4s ease-in-out;
@@ -98,4 +97,3 @@ ul li a:hover{
         right: 0;
         transition: 0.4s ease-in-out;
     }
-}
