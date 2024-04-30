@@ -57,6 +57,8 @@ form{
         margin: 5px;
         width: 100%;
         border-radius: 15px;
+        background-color: rgb(40, 205, 141);
+        transition: all 1.5s;
         button{
             border-radius: 15px ;
             width: 100%; 
@@ -65,6 +67,7 @@ form{
             background-color:rgb(40, 205, 141) ;
             border: none;
             color: #ffffff;
+            transition: all 1.5s;
         }
     }
     
@@ -82,4 +85,16 @@ input{
 
 input:focus{
     border: 2px solid  rgb(40, 205, 141) ;
+}
+
+button:hover{
+    transition:all 1.5s;
+    transform: scale(1);
+    border: none
+}
+
+.button:hover{
+    transition:all 1.5s;
+    transform: scale(0.9);
+    
 }
