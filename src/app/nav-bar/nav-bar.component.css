@@ -89,9 +89,9 @@
         right: -280px;
         background: rgb(40, 205, 141);
         width: 280px;
-        height: 100vh;
+        height: 95vh;
         z-index: 2;
-        border-radius: 10px 0 0 0;
+        border-radius: 10px 0 0 10px;
         
     }
     .desktop_menu ul li{
