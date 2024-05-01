@@ -11,12 +11,14 @@ import { RouterModule } from '@angular/router'
 export class NavBarComponent {
     menuValue:boolean = false;
     menu_icon:string = 'menu';
-    isMenuOpen:boolean = false
+    isMenuOpen:boolean = false;
+    isIcon:boolean = false;
 
     openMenu(){
       this.menuValue=!this.menuValue;
       this.menu_icon = this.menuValue? 'close': 'menu';
-      this.isMenuOpen = !this.isMenuOpen;
+      this.isIcon = !this.isIcon
+      
 
 
     }
@@ -24,6 +26,7 @@ export class NavBarComponent {
       this.menuValue = false;
       this.menu_icon = "menu";
       this.isMenuOpen = false;
+      this.isIcon = !this.isIcon
   
     }
       

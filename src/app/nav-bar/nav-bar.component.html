@@ -4,12 +4,11 @@
     </div>
     <div class="navbar">
         <div class="menu-icon" (click)="openMenu()">
-            <img src="../../assets/icon/{{menu_icon}}.png" alt="">
+            <img src="../../assets/icon/{{menu_icon}}.png" alt="" [ngClass]="{'icon': isIcon}">
         </div>
             <div class="desktop_menu" [class.mobile_menu]="menuValue">
                 <ul>
                     <li (click)="closeMenu()"><a [routerLink]="['/']">Home</a></li> 
-                    <li (click)="closeMenu()"><a >Produit</a></li>
                     <li (click)="closeMenu()"><a [routerLink]="['/signup']">Register</a></li>
                     <li (click)="closeMenu()"><a [routerLink]="['/login']">Login</a></li>
                     <li (click)="closeMenu()"><a href="#">Logout</a></li>
