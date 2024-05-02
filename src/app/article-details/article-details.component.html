@@ -1,8 +1,10 @@
-<app-nav-bar></app-nav-bar>
 
+
+<app-nav-bar></app-nav-bar>
 <div class="content">
 <div class="article">
-  <div id="article">
+  <div id="article" *ngFor="let article of articles">
+    {{article.articles}}
     <div class="img">
       <img src="../../assets/image/1.jpg" alt="" />
     </div>
