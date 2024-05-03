@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RouterLink } from '@angular/router'
+import { RouterLink, ActivatedRoute } from '@angular/router'
 import { NavBarComponent } from '../nav-bar/nav-bar.component'
 import { FilterComponent } from '../filter/filter.component'
 import { FooterComponent } from '../footer/footer.component'
