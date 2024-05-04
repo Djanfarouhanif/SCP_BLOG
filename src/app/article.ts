@@ -1,6 +1,7 @@
 export interface Article {
     id:string;
+    title:string;
     post:string;
     post_image:string;
-    title: string;
+    data_to_create:string;
 }

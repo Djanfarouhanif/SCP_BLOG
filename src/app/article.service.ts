@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient }  from '@angular/common/http'
 import { Observable }  from 'rxjs'
-
+import { Article } from './article'
 
 @Injectable({
   providedIn: 'root'
@@ -12,10 +12,10 @@ export class ArticleService {
 
   constructor(private http:HttpClient){}
 
-    getArticles(): Observable<any[]> {
-      return this.http.get<any[]>(this.apiUrl)
-    }
-
+    getArticles(): Observable<Article[]> {
+      return this.http.get<Article[]>(this.apiUrl)
+    };
+    
 }
 
 

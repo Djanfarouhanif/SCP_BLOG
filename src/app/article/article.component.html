@@ -1,34 +1,17 @@
 <app-nav-bar></app-nav-bar>
 
-<div class="content">
+<div class="content" *ngIf="article">
     <div class="article-content">
-        <h1>Titre de l'article</h1>
+        <h1>{{article.title}}</h1>
 
-        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit
-            . Tenetur aliquid soluta, voluptatum asperiores assumenda,
-             deserunt magnam repellendus corporis quia expedita qui 
-             fugiat eveniet, sit maiores! Consectetur praesentium 
-             itaque obcaecati officiis minus. Nostrum exercitationem
-              sapiente nesciunt libero velit asperiores adipisci, dicta
-               delectus
-             quod iure sit molestiae quisquam sint eum, possimus provident.</p>
+        <p>{{article.post}}</p>
+
         <div class="img">
             <img src="../../assets/image/1.jpg" alt="" >
         </div>
 
         <div class="paragraphe">
-           
-
-             Lorem ipsum dolor 
-             sit amet, consectetur adipisicing elit. Officia, neque!
-             Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              Natus perspiciatis voluptatem doloremque nihil magni?
-               Dicta, excepturi vero soluta amet quis, mollitia maiores
-                accusantium at eveniet, id repudiandae quos deserunt 
-                nulla fuga. Accusamus corporis atque incidunt
-                 voluptatibus, libero iste iure molestiae possimus. 
-                 Quam natus aliquid vero rem commodi odit? Nisi iusto nobis error necessitatibus quam! Nobis beatae rem nostrum alias temporibus, corporis labore at dolorum! Expedita laboriosam quasi iste esse doloribus, perspiciatis incidunt! Error maiores facere enim dicta eaque, culpa quia animi illum earum possimus necessitatibus ad omnis ipsa totam quasi praesentium porro quod! Molestiae atque perspiciatis, eius incidunt quas voluptatum temporibus quia nulla. Magni molestiae ad optio harum placeat. Dignissimos porro ratione nam eos rerum, aut maxime earum officia officiis non hic. Aliquam ut aliquid, aut voluptas numquam, sit commodi quia temporibus dignissimos minus quo quas eius eos fuga, velit iure nesciunt consequatur dicta odit? Accusamus, cumque delectus. Optio repudiandae nesciunt illo deserunt veniam voluptates ullam, laborum at id! Nulla libero odit, illum voluptatibus, eos quae, corrupti totam optio cupiditate ipsa delectus at adipisci quisquam rem et omnis perspiciatis fuga. Numquam sunt, dolor deserunt quae necessitatibus molestiae aspernatur sequi dolorum a a
-             lias nobis vel odio cupiditate ex accusantium incidunt corrupti.
+           {{article.post}}
         </div>
     </div>
     <app-filter class="filter"></app-filter>
