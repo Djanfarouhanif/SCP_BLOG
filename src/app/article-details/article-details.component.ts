@@ -6,7 +6,7 @@ import { FooterComponent } from '../footer/footer.component'
 import { ArticleService } from '../article.service'
 import { CommonModule }  from '@angular/common'
 import { HttpClientModule } from '@angular/common/http';
-
+import { Article } from '../article';
 @Component({
   selector: 'app-article-details',
   standalone: true,
@@ -16,14 +16,16 @@ import { HttpClientModule } from '@angular/common/http';
   providers: [ArticleService]
 })
 export class ArticleDetailsComponent {
-    articles: any[] = [];
+    articles: Article[] = [];
 
     constructor(private articleService:ArticleService){}
 
     ngOnInit(): void {
         this.articleService.getArticles().subscribe(data=>{
-          this.articles = data
-          console.log(this.articles)
+          this.articles = data;
+          console.log(this.articles);
+
+          
        })
 
        

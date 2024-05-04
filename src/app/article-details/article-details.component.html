@@ -10,7 +10,7 @@
     </div>
     <div class="paragraphe">
       <h4>{{article.title}}</h4>
-      <p>{{article.post}}<a [routerLink]="['/article-detaile/{{article.id}}']" >Voire plus</a></p>
+      <p>{{article.post}}<a [routerLink]="['/article-detaile/', article.id]" >Voire plus</a></p>
     </div>
   </div>
 </div>
