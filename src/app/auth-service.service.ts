@@ -9,12 +9,7 @@ export class AuthServiceService {
   constructor( private http:HttpClient) { }
 
   signup(username:string, email:string, password:string, password2:string):Observable<any>{
-    return this.http.post<any>(this.apiUrl, {
-      username:username,
-      email:email,
-      password:password,
-      password2:password2
-    });
+    return this.http.post<any>(this.apiUrl, { username,email ,password,  password2});
   }
 
 }
