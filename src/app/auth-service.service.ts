@@ -9,9 +9,14 @@ export class AuthServiceService {
   private apiUrl:string = "http://127.0.0.1:8000/api/signup"
   constructor( private http:HttpClient) { }
 
-  signup(username:string, email:string, password:string, password2:string):Observable<any>{
-    console.log(username, email, password, password2, 2)
-    const body = {username : username, email:email, password, password2}
+  signup(username:string ,email:string, password:string, password2:string):Observable<any>{
+    const body = {
+      'username': username,
+      'email': email,
+      'password': password,
+      'password2': password2
+    }
+
     return this.http.post<any>(this.apiUrl, body)
      .pipe(
        catchError( this.handleError)

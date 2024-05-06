@@ -19,13 +19,18 @@ export class SignupComponent implements OnInit{
       ngOnInit():void{
   
       }
-      signup(username:string, email:string, password:string, password2:string): void{
-        
+      signup(username:string ,email:string, password:string, password2:string): void{
+        let body = {
+          'username': username,
+          'email': email,
+          'password': password,
+          'password2': password2
+        }
         this.authservice.signup(username, email, password, password2).subscribe(response=>{
           console.log("succes");
         }, error =>{
           console.log(error)
-        })
+        }) 
          
       };
 }
