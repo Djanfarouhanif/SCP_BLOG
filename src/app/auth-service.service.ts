@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient }  from '@angular/common/http'
-import { Observable }  from 'rxjs'
+import { HttpClient, HttpHeaders, HttpErrorResponse }  from '@angular/common/http'
+import { Observable, throwError }  from 'rxjs';
+import { catchError } from 'rxjs/operators'
 @Injectable({
   providedIn: 'root'
 })
@@ -9,7 +10,23 @@ export class AuthServiceService {
   constructor( private http:HttpClient) { }
 
   signup(username:string, email:string, password:string, password2:string):Observable<any>{
-    return this.http.post<any>(this.apiUrl, { username,email ,password,  password2});
+    console.log(username, email, password, password2, 2)
+    const body = {username : username, email:email, password, password2}
+    return this.http.post<any>(this.apiUrl, body)
+     .pipe(
+       catchError( this.handleError)
+     );
   }
+   private handleError(error:HttpErrorResponse){
+     if(error.error instanceof ErrorEvent){
+       console.error("Une erreure s\'est produit :", error.error.message)
+     }else{
+       console.error(
+        `Erreur de backend: ${error.status}` + `body: ${JSON.stringify(error.error)}`
+       );
+     };
+
+     return throwError('Une erreur s\est produit .Veuilles reessayer')
+   }
 
 }
