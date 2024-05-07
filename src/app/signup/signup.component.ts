@@ -3,7 +3,7 @@ import { NavBarComponent } from '../nav-bar/nav-bar.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthServiceService } from '../auth-service.service';
 import {FormsModule, NgForm }  from '@angular/forms'
-
+import { Person } from '../article';
 
 @Component({
   selector: 'app-signup',
@@ -20,14 +20,16 @@ export class SignupComponent implements OnInit{
   
       }
       signup(username:string ,email:string, password:string, password2:string): void{
-        let body = {
-          'username': username,
-          'email': email,
-          'password': password,
-          'password2': password2
+        const data:Person = {
+          username: username,
+          email: email,
+          password: password,
+          password2: password2
         }
-        this.authservice.signup(username, email, password, password2).subscribe(response=>{
-          console.log("succes");
+        
+        
+        this.authservice.signup(data).subscribe(response=>{
+          console.log("succes", response);
         }, error =>{
           console.log(error)
         }) 

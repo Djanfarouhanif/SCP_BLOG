@@ -1,23 +1,25 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpErrorResponse }  from '@angular/common/http'
 import { Observable, throwError }  from 'rxjs';
-import { catchError } from 'rxjs/operators'
+import { catchError } from 'rxjs/operators';
+import { Person }  from './article';
+
 @Injectable({
   providedIn: 'root'
 })
 export class AuthServiceService {
-  private apiUrl:string = "http://127.0.0.1:8000/api/signup"
-  constructor( private http:HttpClient) { }
+  private apiUrl:string = "http://127.0.0.1:8000/api/signup";
+  
+  constructor( private http:HttpClient) {
+    
+   }
 
-  signup(username:string ,email:string, password:string, password2:string):Observable<any>{
-    const body = {
-      'username': username,
-      'email': email,
-      'password': password,
-      'password2': password2
-    }
-
-    return this.http.post<any>(this.apiUrl, body)
+  signup(person:Person):Observable<Person>{
+    
+    const body = JSON.stringify(person)
+    const headers = new HttpHeaders().set('content-type','applictaion/json' )
+    console.log(body)
+    return this.http.post<Person>(this.apiUrl,body, {headers: headers})
      .pipe(
        catchError( this.handleError)
      );
