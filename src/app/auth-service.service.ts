@@ -16,10 +16,12 @@ export class AuthServiceService {
 
   signup(person:Person):Observable<Person>{
     
-    const body = JSON.stringify(person)
-    const headers = new HttpHeaders().set('content-type','applictaion/json' )
-    console.log(body)
-    return this.http.post<Person>(this.apiUrl,body, {headers: headers})
+    const body = JSON.stringify(person);
+    const HttpOpion = {
+      headers: new HttpHeaders({ 'Content-Type': 'application/json'})
+    };
+    console.log(body);
+    return this.http.post<Person>(this.apiUrl,person , HttpOpion)
      .pipe(
        catchError( this.handleError)
      );

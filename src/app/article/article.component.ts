@@ -7,6 +7,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { DetailsService } from '../details.service';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule }  from '@angular/common';
+import { ArticleService } from '../article.service';
 
 
 @Component({
@@ -15,7 +16,7 @@ import { CommonModule }  from '@angular/common';
   imports: [NavBarComponent, HttpClientModule,CommonModule ,FilterComponent, FooterComponent],
   templateUrl: './article.component.html',
   styleUrl: './article.component.css',
-  providers: [DetailsService]
+  providers: [ArticleService]
 })
 
 export class ArticleComponent {
@@ -23,7 +24,7 @@ export class ArticleComponent {
     article: Article| undefined;
 
     constructor( private route: Router,
-      private details: DetailsService
+      private details: ArticleService
     ){}
    ngOnInit():void {
     this.getArticleDetails();
@@ -31,11 +32,13 @@ export class ArticleComponent {
    getArticleDetails(): void {
     const id = this.route.url.split('/').pop();
     
-    if (id !=null){
-      this.details.getArticle(id).subscribe(response=>{
-        this.article = response.article;
-        console.log(this.article)
+    if(id !=null){
+      this.details.getDetailsArticle(id).subscribe((response)=>{
+        this.article = response.article
+      }, (error)=>{
+        console.log(error)
       })
     }
+    
    }
 }
