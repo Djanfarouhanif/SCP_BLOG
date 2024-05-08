@@ -21,3 +21,10 @@ export class Person{
     password!: string;
     password2!: string;
 }
+
+export interface Regis{
+    username: string;
+    email: string;
+    password:string;
+    password2:string
+}

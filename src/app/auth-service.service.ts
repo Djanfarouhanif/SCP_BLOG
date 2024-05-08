@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpErrorResponse }  from '@angular/common/http'
 import { Observable, throwError }  from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { Person }  from './article';
+import { Person, Regis }  from './article';
 
 @Injectable({
   providedIn: 'root'
@@ -14,14 +14,15 @@ export class AuthServiceService {
     
    }
 
-  signup(person:Person):Observable<Person>{
+  signup(person:Regis):Observable<Person>{
     
-    const body = JSON.stringify(person);
-    const HttpOpion = {
-      headers: new HttpHeaders({ 'Content-Type': 'application/json'})
-    };
-    console.log(body);
-    return this.http.post<Person>(this.apiUrl,person , HttpOpion)
+    const formData = new FormData();
+    formData.append('username', person.username);
+    formData.append('email', person.email);
+    formData.append('password', person.password);
+    formData.append('password2', person.password2);
+    console.log(formData);
+    return this.http.post<Person>(this.apiUrl,formData)
      .pipe(
        catchError( this.handleError)
      );

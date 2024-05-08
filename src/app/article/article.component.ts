@@ -4,7 +4,6 @@ import { FilterComponent } from '../filter/filter.component';
 import { FooterComponent } from '../footer/footer.component';
 import { Article, ArticleComment }  from '../article'
 import { ActivatedRoute, Router } from '@angular/router';
-import { DetailsService } from '../details.service';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule }  from '@angular/common';
 import { ArticleService } from '../article.service';

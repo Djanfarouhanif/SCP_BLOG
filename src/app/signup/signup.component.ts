@@ -26,8 +26,6 @@ export class SignupComponent implements OnInit{
           password: password,
           password2: password2
         }
-        
-        
         this.authservice.signup(data).subscribe(response=>{
           console.log("succes", response);
         }, error =>{
